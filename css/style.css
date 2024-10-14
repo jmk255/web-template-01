@@ -139,7 +139,27 @@ nav li.active{
 }
 #about .member > li{
   text-align: center;
+  transition:all 0.3s;/*속성이 변경되면 0.3초동안 변경*/
+  opacity:0;
 }
+#about .member > li:nth-child(1){
+  transform: translateX(-100%);
+}
+#about .member > li:nth-child(2){
+  transform: translateY(-100%);
+}
+#about .member > li:nth-child(3){
+  transform: translateY(100%);
+}
+#about .member > li:nth-child(4){
+  transform: translateX(100%);
+}
+/*.member에 on클래스가 추가되면 li요소가 화면에 나타남*/
+#about .member.on > li{
+  transform:translate(0,0);
+  opacity:1;
+}
+
 #about .member h3{
   font-size:14px;
   margin:20px 0 5px;
@@ -263,3 +283,16 @@ footer span{margin-right:30px;}
 footer p a{
   background-color:#ff9;
 }
+
+/*scrollTop버튼*/
+.top{
+  color:red;
+  font-size:18px;
+  font-weight: bold;
+  position:fixed;
+  bottom:20px;
+  right:30px;
+  z-index: 9999;
+  display:none;
+}
+.top i{margin-right:5px;}
